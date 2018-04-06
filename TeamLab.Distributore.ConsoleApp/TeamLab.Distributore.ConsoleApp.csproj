@@ -42,8 +42,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\Casher.cs" />
+    <Compile Include="Models\Interfaces\ICasher.cs" />
     <Compile Include="Models\Interfaces\IDispencer.cs" />
     <Compile Include="Models\Interfaces\ISlotSelector.cs" />
+    <Compile Include="Models\Interfaces\IDisplay.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
