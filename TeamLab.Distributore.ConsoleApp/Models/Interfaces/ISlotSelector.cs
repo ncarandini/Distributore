@@ -4,12 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TeamLab.Distributore.ConsoleApp
+namespace TeamLab.Distributore.ConsoleApp.Models.Interfaces
 {
-    class Program
+    class ISlotSelector
     {
-        static void Main(string[] args)
-        {
-        }
     }
 }
