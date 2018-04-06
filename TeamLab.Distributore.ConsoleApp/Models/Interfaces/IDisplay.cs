@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace TeamLab.Distributore.ConsoleApp.Models.Interfaces
 {
-    class ISlotSelector
+    interface IDisplay
     {
+        /// <summary>
+        /// Mostra il messaggio sul display
+        /// </summary>
+        /// <param name="msg"></param>
+        void ShowMessage(string msg);
     }
 }
