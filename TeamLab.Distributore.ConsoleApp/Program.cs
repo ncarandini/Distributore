@@ -10,6 +10,8 @@ namespace TeamLab.Distributore.ConsoleApp
     {
         static void Main(string[] args)
         {
+
+
         }
     }
 }
