@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace TeamLab.Distributore.ConsoleApp.Models.Interfaces
 {
-    class ISlotSelector
+    interface ISlotSelector
     {
+        bool GetCode(string code);
+        void SendData();
     }
 }
