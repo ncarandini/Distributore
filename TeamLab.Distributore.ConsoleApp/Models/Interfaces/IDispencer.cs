@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 namespace TeamLab.Distributore.ConsoleApp.Models.Interfaces
 {
     /*  Use Case:
-        1. Mostra sul display se il prodotto è disponibile e il costo del prodotto
-        2. Mostra sul display il prezzo del prodotto se non ha inserito i soldi
-        3. Mostra sul display se il credito è insufficiente e dice quanto manca
-        4. Se il credito è sufficiente PRELEVA PRODOTTO
+        1 Il prodotto è disponibile, il credito è sufficiente, eroga prodotto.
+        2 Il prodotto è disponibile, il credito è 0, mostra il prezzo del prodotto.
+        3 Il prodotto è disponibile, il credito è inferiore al costo, mostra la differenza tra il prodotto e il credito.
     */
 
     interface IDispencer
     {
+        IDispencer CreaDispencer();
     }
 }
