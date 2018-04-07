@@ -44,14 +44,14 @@
   <ItemGroup>
     <Compile Include="Models\Casher.cs" />
     <Compile Include="Models\Interfaces\ICasher.cs" />
+    <Compile Include="Models\Interfaces\IDispencer.cs" />
+    <Compile Include="Models\Interfaces\IDisplay.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\Interfaces\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
