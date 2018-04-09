@@ -29,15 +29,14 @@ namespace TeamLab.Distributore.ConsoleApp.Models
         /// Metodo che crea un dispencer
         /// </summary>
         /// <returns></returns>
-        public IDispencer CreaDispencer()
+        public static IDispencer CreaDispencer()
         {
-            return new Dispencer(new LcdDisplay(), new SlotSelector(), new Casher());
-            
+            return new Dispencer(LcdDisplay.Current, new SlotSelector(), new Casher());
         }
 
         public void SlotSelected(string slotId, int price)
         {
-            bool creditoSufficiente = casher.CreditoSufficiente(price);
+            bool creditoSufficiente = price <= casher.CreditoDisponibile();
             if(creditoSufficiente)
             {
                 casher.Incassa(price);
@@ -46,7 +45,8 @@ namespace TeamLab.Distributore.ConsoleApp.Models
             }
             else
             {
-                display.ShowMessage("Esci i soldi Poraccio!");
+                int differenzaDerPoraccio = price - casher.CreditoDisponibile();
+                display.ShowMessage($"Esci i soldi Poraccio! (e ne devi caccià na cifra, pari a {differenzaDerPoraccio} ");
                 Logger.Log(this, "Credito insufficiente");
             }
 

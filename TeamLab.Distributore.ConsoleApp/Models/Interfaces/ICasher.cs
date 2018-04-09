@@ -32,6 +32,6 @@ namespace TeamLab.Distributore.ConsoleApp.Models.Interfaces
         /// </summary>
         /// <param name="costo">Costo effettivo del prodotto</param>
         /// <returns>Ritorna true se il credito è sufficiente, altrimenti ritorna false</returns>
-        bool CreditoSufficiente(int costo);
+        int CreditoDisponibile();
     }
 }
