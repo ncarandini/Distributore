@@ -66,14 +66,26 @@ namespace TeamLab.Distributore.ConsoleApp.Models
 
         public void InsertCode(string code)
         {
+            Logger.Log(this, $"E' stato inserito il codice {code}");
+            foreach (Product product in Products )
+            {
+                Logger.Log(this, $"{product.Code} {product.Quantità} {product.Price}");
+            }
+            
             if (VerificaCodice(code))
             {
+                Logger.Log(this, $"Il codice {code} corrisponde ad uno slot non vuoto");
+
                 int index = Products.FindIndex(p => p.Code == code);
                 SlotSelected(code, Products[index].Price);
             }
             else
+            {
+                Logger.Log(this, $"Il codice {code} non corrisponde ad uno slot");
                 display.ShowMessage("Prodotto selezionato non disponibile");
+            }
                 
+
             
         }
     }

@@ -23,6 +23,8 @@ namespace TeamLab.Distributore.ConsoleApp
             dispencer.AggiungiCredito(10);
             dispencer.SelezionaSlot("A1");
             dispencer.RichiediResto();
+
+            Console.Write("Premi un tasto terminare...")
         }
     }
 }
