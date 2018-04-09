@@ -11,10 +11,12 @@ namespace TeamLab.Distributore.ConsoleApp.Models
     public class Casher : ICasher
     {
         private int creditoResiduo;
+        private IDisplay display;
         
         public Casher()
         {
             creditoResiduo = 0;
+            display = LcdDisplay.Current;
             Logger.Log(this, "sono stato istanziato");
         }
 

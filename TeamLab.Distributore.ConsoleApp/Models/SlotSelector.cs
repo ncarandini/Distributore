@@ -11,15 +11,15 @@ namespace TeamLab.Distributore.ConsoleApp.Models
     {
 
         public delegate void SlotSelectedHandler(String slotId, int price);
-
         public event SlotSelectedHandler SlotSelected;
 
+        IDisplay display;
         List<Product> Products;
 
         public SlotSelector()
         {
             Products = new List<Product>();
-
+            display = LcdDisplay.Current;
             Load("ABC");
         }
 
