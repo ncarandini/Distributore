@@ -45,6 +45,7 @@
     <Compile Include="Models\Casher.cs" />
     <Compile Include="Models\Dispencer.cs" />
     <Compile Include="Models\LcdDisplay.cs" />
+    <Compile Include="Models\Logger.cs" />
     <Compile Include="Models\SlotSelector.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\Interfaces\ICasher.cs" />
