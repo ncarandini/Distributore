@@ -70,8 +70,8 @@ namespace TeamLab.Distributore.ConsoleApp.Models
                 int index = Products.FindIndex(p => p.Code == code);
                 SlotSelected(code, Products[index].Price);
             }
-           // else
-               // LcdDisplay.Current lcdDisplay.
+            else
+                display.ShowMessage("Prodotto selezionato non disponibile");
                 
             
         }
