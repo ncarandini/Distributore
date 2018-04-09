@@ -18,9 +18,8 @@ namespace TeamLab.Distributore.ConsoleApp.Models
             Load("ABC");
         }
 
-        public bool GetCode(string code)
-        {
-            bool verificato = false;
+       
+            /*bool verificato = false;
             foreach(Product i in Products)
             {
                 if (i.Code == code)
@@ -28,13 +27,8 @@ namespace TeamLab.Distributore.ConsoleApp.Models
                     verificato = true;
                     break; }
             }
-            return verificato;
-        }
-
-        public void SendData()
-        {
-            
-        }
+            return verificato;*/
+        
 
         private void Load(string s)
         {
