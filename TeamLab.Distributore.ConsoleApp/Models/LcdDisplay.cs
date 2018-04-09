@@ -9,6 +9,7 @@ namespace TeamLab.Distributore.ConsoleApp.Models
 {
     class LcdDisplay : IDisplay
     {
+
         public void ShowMessage(string msg)
         {
             throw new NotImplementedException();

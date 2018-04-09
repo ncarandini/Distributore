@@ -23,13 +23,13 @@ namespace TeamLab.Distributore.ConsoleApp.Models
             Load("ABC");
         }
 
-       public bool InsertCode(string code)
+       public bool VerificaCodice(string code)
         {
             
             bool verificato = false;
             foreach(Product i in Products)
             {
-                if (i.Code == code )
+                if (i.Code == code && i.quantità>0 )
                 {
                     verificato = true;
                     break; }
@@ -65,6 +65,14 @@ namespace TeamLab.Distributore.ConsoleApp.Models
 
         public void InsertCode(string code)
         {
+            if (VerificaCodice(code))
+            {
+                int index = Products.FindIndex(p => p.Code == code);
+                SlotSelected(code, Products[index].Price);
+            }
+           // else
+               // LcdDisplay.Current lcdDisplay.
+                
             
         }
     }
