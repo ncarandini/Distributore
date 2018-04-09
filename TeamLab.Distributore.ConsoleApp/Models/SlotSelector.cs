@@ -9,6 +9,11 @@ namespace TeamLab.Distributore.ConsoleApp.Models
 {
     class SlotSelector : ISlotSelector
     {
+
+        public delegate void SlotSelectedHandler(String slotId, int price);
+
+        public event SlotSelectedHandler SlotSelected;
+
         List<Product> Products;
 
         public SlotSelector()
@@ -18,16 +23,26 @@ namespace TeamLab.Distributore.ConsoleApp.Models
             Load("ABC");
         }
 
-       
-            /*bool verificato = false;
+       public bool InsertCode(string code)
+        {
+            
+            bool verificato = false;
             foreach(Product i in Products)
             {
-                if (i.Code == code)
+                if (i.Code == code )
                 {
                     verificato = true;
                     break; }
             }
-            return verificato;*/
+            return verificato;            
+        }
+
+        public void ProdottoErogato(string slotid)
+        {
+
+        }
+           
+           
         
 
         private void Load(string s)
@@ -45,6 +60,11 @@ namespace TeamLab.Distributore.ConsoleApp.Models
                     Products.Add(product);
                 }
             }
+        }
+
+        public void InsertCode(string code)
+        {
+            throw new NotImplementedException();
         }
     }
 }
