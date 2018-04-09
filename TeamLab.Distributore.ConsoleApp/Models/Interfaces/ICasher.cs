@@ -8,12 +8,7 @@ namespace TeamLab.Distributore.ConsoleApp.Models.Interfaces
 {
     interface ICasher
     {
-        /// <summary>
-        /// Istanzia una nuova cassa
-        /// </summary>
-        /// <returns></returns>
-        ICasher creaCassa();
-
+        
         /// <summary>
         /// Incrementa il credito residuo
         /// </summary>

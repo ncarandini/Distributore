@@ -11,7 +11,7 @@ namespace TeamLab.Distributore.ConsoleApp.Models
     {
         private int creditoResiduo;
 
-        private Casher()
+        public Casher()
         {
             creditoResiduo = 0;
         }
@@ -45,9 +45,5 @@ namespace TeamLab.Distributore.ConsoleApp.Models
             creditoResiduo += moneta;
         }
 
-        public ICasher creaCassa()
-        {
-            return new Casher();
-        }
     }
 }
