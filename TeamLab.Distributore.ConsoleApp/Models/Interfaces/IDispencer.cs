@@ -16,7 +16,10 @@ namespace TeamLab.Distributore.ConsoleApp.Models.Interfaces
     {
 
         IDispencer CreaDispencer();
-        
+
+        void AggiungiCredito(int moneta);
+        void RichiediResto();
+        void SelezionaSlot(string codice);
     }
     
 
