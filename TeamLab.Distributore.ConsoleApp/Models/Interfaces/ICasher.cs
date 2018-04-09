@@ -8,12 +8,7 @@ namespace TeamLab.Distributore.ConsoleApp.Models.Interfaces
 {
     interface ICasher
     {
-        /// <summary>
-        /// Istanzia una nuova cassa
-        /// </summary>
-        /// <returns></returns>
-        ICasher creaCassa();
-
+        
         /// <summary>
         /// Incrementa il credito residuo
         /// </summary>
@@ -26,16 +21,17 @@ namespace TeamLab.Distributore.ConsoleApp.Models.Interfaces
         void RestituisciCredito();
 
         /// <summary>
-        /// Calcola il resto e lo rilascia all'utente
+        /// Mette da parte i soldi corrispondenti al prezzo del prodotto 
+        /// erogato
         /// </summary>
         /// <param name="costo">Costo effettivo del prodotto</param>
-        void DaiResto(int costo);
+        void Incassa(int costo);
 
         /// <summary>
         /// Controlla se il credito è sufficiente
         /// </summary>
         /// <param name="costo">Costo effettivo del prodotto</param>
         /// <returns>Ritorna true se il credito è sufficiente, altrimenti ritorna false</returns>
-        bool CheckSaldo(int costo);
+        bool CreditoSufficiente(int costo);
     }
 }
