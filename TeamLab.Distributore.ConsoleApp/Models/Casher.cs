@@ -7,7 +7,7 @@ using TeamLab.Distributore.ConsoleApp.Models.Interfaces;
 
 namespace TeamLab.Distributore.ConsoleApp.Models
 {
-    class Casher : ICasher
+    public class Casher : ICasher
     {
         private int creditoResiduo;
 
@@ -22,27 +22,20 @@ namespace TeamLab.Distributore.ConsoleApp.Models
             creditoResiduo = 0;
         }
 
-        public bool CheckSaldo(int costo)
+        public bool CreditoSufficiente(int costo)
         {
-            bool risultato = false;
-
-            if(creditoResiduo >= costo)
-            {
-                risultato = true;
-            }
-
-            return risultato;
+            return creditoResiduo >= costo;
         }
 
-        public void DaiResto(int costo)
+        public void Incassa(int costo)
         {
-            int resto = creditoResiduo - costo;
-            creditoResiduo = 0;
+            creditoResiduo -= costo;
         }
 
         public void InserisciMoneta(int moneta)
         {
             creditoResiduo += moneta;
         }
+
     }
 }
