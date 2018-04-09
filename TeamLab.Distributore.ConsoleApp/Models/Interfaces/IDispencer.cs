@@ -14,6 +14,7 @@ namespace TeamLab.Distributore.ConsoleApp.Models.Interfaces
 
     interface IDispencer
     {
+
         IDispencer CreaDispencer();
         
     }

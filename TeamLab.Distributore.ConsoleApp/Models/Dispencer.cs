@@ -15,6 +15,7 @@ namespace TeamLab.Distributore.ConsoleApp.Models
 
         public int Id { get; set; }
 
+
         private Dispencer(IDisplay display, ISlotSelector slotSelector, ICasher casher)
         {
             this.display = display;
