@@ -39,11 +39,12 @@ namespace TeamLab.Distributore.ConsoleApp.Models
 
         public void ProdottoErogato(string slotid)
         {
-
-        }
-           
-           
-        
+            foreach (Product i in Products)
+                if (i.Code == slotid)
+                {
+                    --i.quantità;
+                }
+        }    
 
         private void Load(string s)
         {
@@ -64,7 +65,7 @@ namespace TeamLab.Distributore.ConsoleApp.Models
 
         public void InsertCode(string code)
         {
-            throw new NotImplementedException();
+            
         }
     }
 }

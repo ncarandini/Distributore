@@ -8,8 +8,9 @@ namespace TeamLab.Distributore.ConsoleApp.Models
 {
     class Product
     {
-       public String Code {   get;  set;}
-       public int Price   {   get;  set;}
+        public String Code { get; set; }
+        public int Price { get; set; }
+        public int quantità { get; set; }
 
     }
 }
