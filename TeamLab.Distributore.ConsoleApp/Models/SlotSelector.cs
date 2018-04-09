@@ -56,7 +56,8 @@ namespace TeamLab.Distributore.ConsoleApp.Models
                     Product product = new Product
                     {
                         Price = random.Next(50, 200),
-                        Code = c + i.ToString()
+                        Code = c + i.ToString(),
+                        Quantità = random.Next(0, 10)
                     };
                     Products.Add(product);
                 }

@@ -10,7 +10,7 @@ namespace TeamLab.Distributore.ConsoleApp.Models
     {
         public String Code { get; set; }
         public int Price { get; set; }
-        public int quantità { get; set; }
+        public int Quantità { get; set; }
 
     }
 }
