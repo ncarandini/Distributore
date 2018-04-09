@@ -29,7 +29,7 @@ namespace TeamLab.Distributore.ConsoleApp.Models
             bool verificato = false;
             foreach(Product i in Products)
             {
-                if (i.Code == code && i.quantità>0 )
+                if (i.Code == code && i.Quantità>0 )
                 {
                     verificato = true;
                     break; }
@@ -42,7 +42,7 @@ namespace TeamLab.Distributore.ConsoleApp.Models
             foreach (Product i in Products)
                 if (i.Code == slotid)
                 {
-                    --i.quantità;
+                    --i.Quantità;
                 }
         }    
 
