@@ -10,7 +10,8 @@ namespace TeamLab.Distributore.ConsoleApp.Models
     {
         public static void Log(object sender, string msg)
         {
-            Console.WriteLine(msg);
+            string emitter = sender.GetType().Name;
+            Console.WriteLine($"{DateTime.Now} [{emitter}] {msg}");
         }
     }
 }

@@ -30,6 +30,16 @@ namespace TeamLab.Distributore.ConsoleApp.Models
         {
             return new Dispencer(new LcdDisplay(), new SlotSelector(), new Casher());
         }
+
+        public void SlotSelected(string slotId, int price)
+        {
+            
+        }
+
+        public void ErogaProdotto(string slotId, int price)
+        {
+
+        }
     }
 }
 

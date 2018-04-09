@@ -8,7 +8,8 @@ namespace TeamLab.Distributore.ConsoleApp.Models.Interfaces
 {
     interface ISlotSelector
     {
-        bool GetCode(string code);
-        void SendData();
+        //Use case: 1 selezione prodotto 
+
+
     }
 }
