@@ -21,6 +21,8 @@ namespace TeamLab.Distributore.ConsoleApp.Models
             this.display = display;
             this.slotSelector = slotSelector;
             this.casher = casher;
+
+            slotSelector.SlotSelected += SlotSelected;
         }
 
         /// <summary>
@@ -40,6 +42,7 @@ namespace TeamLab.Distributore.ConsoleApp.Models
             {
                 casher.Incassa(price);
                 ErogaProdotto(slotId);
+                slotSelector.ProdottoErogato(slotId);
             }
             else
             {
