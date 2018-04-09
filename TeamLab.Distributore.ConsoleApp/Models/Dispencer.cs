@@ -15,11 +15,14 @@ namespace TeamLab.Distributore.ConsoleApp.Models
 
         public int Id { get; set; }
 
+
         private Dispencer(IDisplay display, ISlotSelector slotSelector, ICasher casher)
         {
             this.display = display;
             this.slotSelector = slotSelector;
             this.casher = casher;
+
+            slotSelector.SlotSelected += SlotSelected;
         }
 
         /// <summary>
@@ -38,6 +41,7 @@ namespace TeamLab.Distributore.ConsoleApp.Models
             {
                 casher.Incassa(price);
                 ErogaProdotto(slotId);
+                slotSelector.ProdottoErogato(slotId);
             }
             else
             {
