@@ -47,7 +47,7 @@ namespace TeamLab.Distributore.ConsoleApp.Models
             {
                 int differenzaDerPoraccio = price - casher.CreditoDisponibile();
                 display.ShowMessage($"Esci i soldi Poraccio! (e ne devi caccià na cifra, pari a {differenzaDerPoraccio} ");
-                Logger.Log(this, "Credito insufficiente");
+                Logger.Log(this, $"Dallo slot {slotId} è stato richiesto il prodotto ma il credito attuale è insufficiente");
             }
 
         }
