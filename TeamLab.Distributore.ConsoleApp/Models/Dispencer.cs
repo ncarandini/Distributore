@@ -29,6 +29,30 @@ namespace TeamLab.Distributore.ConsoleApp.Models
         public IDispencer CreaDispencer()
         {
             return new Dispencer(new LcdDisplay(), new SlotSelector(), new Casher());
+            
+        }
+
+        public void SlotSelected(string slotId, int price)
+        {
+            bool creditoSufficiente = casher.CreditoSufficiente(price);
+            if(creditoSufficiente)
+            {
+                casher.Incassa(price);
+                ErogaProdotto(slotId);
+            }
+            else
+            {
+                display.ShowMessage("Esci i soldi Poraccio!");
+                Logger.Log(this, "Credito insufficiente");
+            }
+
+        }
+
+        public void ErogaProdotto(string slotId)
+        {
+            display.ShowMessage("Erogazione in corso...");
+            Logger.Log(this, $"Erogazione prodotto dallo slot {slotId}");
+            display.ShowMessage(string.Empty);
         }
     }
 }
