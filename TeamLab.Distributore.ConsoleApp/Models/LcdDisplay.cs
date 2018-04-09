@@ -9,6 +9,23 @@ namespace TeamLab.Distributore.ConsoleApp.Models
 {
     class LcdDisplay : IDisplay
     {
+        private static IDisplay current;
+        public static IDisplay Current
+        {
+            get
+            {
+                if (current == null)
+                {
+                    current = new LcdDisplay();
+                }
+                return current;
+            }
+            private set
+            {
+                current = value;
+            }
+        }
+
         public void ShowMessage(string msg)
         {
             throw new NotImplementedException();

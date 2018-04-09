@@ -25,11 +25,10 @@ namespace TeamLab.Distributore.ConsoleApp.Models
             Logger.Log(this, $"sono stati restituiti {creditoRestituito} cent.");
         }
 
-        public bool CreditoSufficiente(int costo)
+        public int CreditoDisponibile()
         {
-            bool result = creditoResiduo >= costo;
-            Logger.Log(this, $"controllo se il credito è sufficiente ad effettuare l'acquisto. risultato: {result}");
-            return result;
+            Logger.Log(this, $"Il credito disponibile è pari a: {creditoResiduo}");
+            return creditoResiduo;
         }
 
         public void Incassa(int costo)

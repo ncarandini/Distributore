@@ -26,10 +26,9 @@ namespace TeamLab.Distributore.ConsoleApp.Models
         /// Metodo che crea un dispencer
         /// </summary>
         /// <returns></returns>
-        public IDispencer CreaDispencer()
+        public static IDispencer CreaDispencer()
         {
             return new Dispencer(new LcdDisplay(), new SlotSelector(), new Casher());
-            
         }
 
         public void SlotSelected(string slotId, int price)
