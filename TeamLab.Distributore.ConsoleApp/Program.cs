@@ -24,7 +24,9 @@ namespace TeamLab.Distributore.ConsoleApp
             dispencer.SelezionaSlot("A1");
             dispencer.RichiediResto();
 
-            Console.Write("Premi un tasto terminare...")
+            Console.WriteLine("Premi un tasto terminare...");
+            Console.ReadKey();
+
         }
     }
 }
