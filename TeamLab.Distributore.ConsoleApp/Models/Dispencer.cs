@@ -75,6 +75,7 @@ namespace TeamLab.Distributore.ConsoleApp.Models
         public void RichiediResto()
         {
             casher.RestituisciCredito();
+            Logger.Log(this, "E' stato restituito il resto dal credito residuo");
         }
 
         public void SelezionaSlot(string codiceSlot)
