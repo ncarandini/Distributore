@@ -9,9 +9,7 @@ namespace TeamLab.Distributore.ConsoleApp.Models
 {
     class SlotSelector : ISlotSelector
     {
-
-        public delegate void SlotSelectedHandler(String slotId, int price);
-        public event SlotSelectedHandler SlotSelected;
+        public event Action<string,int> SlotSelected;
 
         IDisplay display;
         List<Product> Products;
@@ -23,18 +21,18 @@ namespace TeamLab.Distributore.ConsoleApp.Models
             Load("ABC");
         }
 
-       public bool VerificaCodice(string code)
+       public Product GetProductFromCode(string code)
         {
-            
-            bool verificato = false;
-            foreach(Product i in Products)
+            Product product = null;
+            foreach(Product p in Products)
             {
-                if (i.Code == code && i.Quantità>0 )
+                if (p.Code == code)
                 {
-                    verificato = true;
-                    break; }
+                    product = p;
+                    break;
+                }
             }
-            return verificato;            
+            return product;            
         }
 
         public void ProdottoErogato(string slotid)
@@ -67,26 +65,22 @@ namespace TeamLab.Distributore.ConsoleApp.Models
         public void InsertCode(string code)
         {
             Logger.Log(this, $"E' stato inserito il codice {code}");
-            foreach (Product product in Products )
+            foreach (Product p in Products )
             {
-                Logger.Log(this, $"{product.Code} {product.Quantità} {product.Price}");
+                Logger.Log(this, $"{p.Code} {p.Quantità} {p.Price}");
             }
-            
-            if (VerificaCodice(code))
+
+            Product product = GetProductFromCode(code);
+            if (product != null)
             {
                 Logger.Log(this, $"Il codice {code} corrisponde ad uno slot non vuoto");
-
-                int index = Products.FindIndex(p => p.Code == code);
-                SlotSelected(code, Products[index].Price);
+                SlotSelected(code, product.Price);
             }
             else
             {
                 Logger.Log(this, $"Il codice {code} non corrisponde ad uno slot");
                 display.ShowMessage("Prodotto selezionato non disponibile");
             }
-                
-
-            
         }
     }
 }

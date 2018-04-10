@@ -11,7 +11,7 @@ namespace TeamLab.Distributore.ConsoleApp.Models.Interfaces
     {
         //Use case: 1 selezione prodotto 
 
-        event SlotSelectedHandler SlotSelected;
+        event Action<string, int> SlotSelected;
 
         void InsertCode(string code);
         void ProdottoErogato(string slotid);
