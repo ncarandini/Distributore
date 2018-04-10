@@ -63,13 +63,19 @@ namespace TeamLab.Distributore.ConsoleApp.Models
         {
             if (casher != null)
             {
+                Logger.Log(this, $"Richiesta di incremento credito di {moneta} centesimi");
                 casher.InserisciMoneta(moneta);
+            }
+            else
+            {
+                Logger.Log(this, "Error: Credito non aggiunto perché Casher non istanziato");
             }
         }
 
         public void RichiediResto()
         {
             casher.RestituisciCredito();
+            Logger.Log(this, "E' stato restituito il resto dal credito residuo");
         }
 
         public void SelezionaSlot(string codiceSlot)
